@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # preware-bootstrap.sh
-# version 1.0
+# version 1.1
 #
 # Script to install Preware
 #
@@ -23,6 +23,7 @@
 # 0.8 Rewrote entire portions to fully support 1.3.5 and previous versions simultaneously. Supports two offline root dirs.
 # 0.9 Fails over to production feed if user selected Y to alpha and no versions are avail. Added support for alpha Preware.
 # 1.0 Updated for Preware 1.0
+# 1.1 Change URLs from preware.org to preware.net (bbito, 20171005)
 
 ### VARIABLES
 
