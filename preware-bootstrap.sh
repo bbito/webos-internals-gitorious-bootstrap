@@ -107,13 +107,13 @@ ipkgversion_check() {
   log "Checking $PKG version"
   cd /tmp 
   rm -f /tmp/org.webosinternals.Packages*
-  wget http://ipkg.preware.org/feeds/webos-internals/${FEED_URL}/Packages.gz -O /tmp/org.webosinternals.Packages.gz >> "$LOG" 2>&1 \
+  wget http://ipkg.preware.net/feeds/webos-internals/${FEED_URL}/Packages.gz -O /tmp/org.webosinternals.Packages.gz >> "$LOG" 2>&1 \
     && gunzip /tmp/org.webosinternals.Packages.gz >> "$LOG" 2>&1
   PKG_VER_CURRENT=$(awk 'BEGIN { RS = ""}; /^Package: '$PKG'\n/ {print}' /tmp/org.webosinternals.Packages | awk '/^Version:/ {print $2}')
   if [ ! "$PKG_VER_CURRENT" -a "${FEED_URL}" = "testing/${FEED_ARCH}" ] ; then
     rm -f /tmp/org.webosinternals.Packages*
     FEED_URL=${FEED_ARCH}
-    wget http://ipkg.preware.org/feeds/webos-internals/${FEED_URL}/Packages.gz -O /tmp/org.webosinternals.Packages.gz >> "$LOG" 2>&1 \
+    wget http://ipkg.preware.net/feeds/webos-internals/${FEED_URL}/Packages.gz -O /tmp/org.webosinternals.Packages.gz >> "$LOG" 2>&1 \
       && gunzip /tmp/org.webosinternals.Packages.gz >> "$LOG" 2>&1
     PKG_VER_CURRENT=$(awk 'BEGIN { RS = ""}; /^Package: '$PKG'\n/ {print}' /tmp/org.webosinternals.Packages | awk '/^Version:/ {print $2}')
   fi
