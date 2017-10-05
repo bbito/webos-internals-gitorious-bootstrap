@@ -182,7 +182,7 @@ fi
   echo -n "Installing org.webosinternal.preware v${PKG_VER_CURRENT}: "
   cd /tmp || error "Failed to change directory to /tmp" || return 1
   rm -f /tmp/org.webosinternals.preware_${PKG_VER_CURRENT}_${PACKAGE_ARCH}.ipk
-  wget http://ipkg.preware.org/feeds/webos-internals/${FEED_URL}/org.webosinternals.preware_${PKG_VER_CURRENT}_${PACKAGE_ARCH}.ipk >> "$LOG" 2>&1 \
+  wget http://ipkg.preware.net/feeds/webos-internals/${FEED_URL}/org.webosinternals.preware_${PKG_VER_CURRENT}_${PACKAGE_ARCH}.ipk >> "$LOG" 2>&1 \
     || error "Failed to download org.webosinternals.preware_${PKG_VER_CURRENT}_${PACKAGE_ARCH}.ipk" || return 1
   /usr/bin/ipkg -o $APPS install ./org.webosinternals.preware_${PKG_VER_CURRENT}_${PACKAGE_ARCH}.ipk >> "$LOG" 2>&1 \
     || error "Failed to install /tmp/org.webosinternals.preware_${PKG_VER_CURRENT}_${PACKAGE_ARCH}.ipk" || return 1
